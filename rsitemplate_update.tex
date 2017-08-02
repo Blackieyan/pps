@@ -1,0 +1,253 @@
+%% ****** Start of file rsitemplate.tex ****** %
+%%
+%%   This file has been edited from the original source file.
+%%	 The original file is part of the revtex4-1 package indicated below.
+%%   Version 4.1 of 9 October 2009.
+%%
+%
+% This is a template for producing documents for use with
+% the REVTEX 4.1 document class and the RSI substyle.
+%
+% Copy this file to another name and then work on that file.
+% That way, you always have this original template file to use.
+
+\documentclass[aip,rsi,reprint,graphicx]{revtex4-1} % for checking your page length
+%\\documentclass[aip,rsi,preprint,graphicx]{revtex4-1} % for review purposes
+\usepackage{graphicx}
+
+\draft % marks overfull lines with a black rule on the right
+\usepackage[margins,adjustmargins]{changes}
+\begin{document}
+
+% Use the \preprint command to place your local institutional report number
+% on the title page in preprint mode.
+% Multiple \preprint commands are allowed.
+%\preprint{}
+
+\title{Megahertz High Voltage Pulse Generator Based On Power MOSFET} %Title of paper
+
+% repeat the \author .. \affiliation  etc. as needed
+% \email, \thanks, \homepage, \altaffiliation all apply to the current author.
+% Explanatory text should go in the []'s,
+% actual e-mail address or url should go in the {}'s for \email and \homepage.
+% Please use the appropriate macro for the type of information
+
+% \affiliation command applies to all authors since the last \affiliation command.
+% The \affiliation command should follow the other information.
+\author{Yu Xu}
+\email[]{xuyu0922@mail.ustc.edu.cn}
+%\homepage[]{Your web page}
+%\thanks{}
+%\altaffiliation{}
+\affiliation{Shanghai Branch, National Laboratory for Physical Sciences at Microscale and Department of Modern Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Shanghai Branch, CAS Center for Excellence and Synergetic Innovation Center in Quantum Information and Quantum Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Anhui Key Laboratory of Physical Electronics, State Key Laboratory of Particle Detection and Electronics, Modern Physics Department, University of Science and Technology of China, Hefei 230026, China}
+
+\author{Wei Chen}
+\email[]{Chenwei4@mail.ustc.edu.cn}
+%\homepage[]{Your web page}
+%\thanks{}
+%\altaffiliation{}
+\affiliation{Shanghai Branch, National Laboratory for Physical Sciences at Microscale and Department of Modern Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Shanghai Branch, CAS Center for Excellence and Synergetic Innovation Center in Quantum Information and Quantum Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Anhui Key Laboratory of Physical Electronics, State Key Laboratory of Particle Detection and Electronics, Modern Physics Department, University of Science and Technology of China, Hefei 230026, China}
+
+\author{Hao Liang}
+%\email[]{Chenwei4@mail.ustc.edu.cn}
+%\homepage[]{Your web page}
+%\thanks{}
+%\altaffiliation{}
+\affiliation{Shanghai Branch, National Laboratory for Physical Sciences at Microscale and Department of Modern Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Shanghai Branch, CAS Center for Excellence and Synergetic Innovation Center in Quantum Information and Quantum Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Anhui Key Laboratory of Physical Electronics, State Key Laboratory of Particle Detection and Electronics, Modern Physics Department, University of Science and Technology of China, Hefei 230026, China}
+
+\author{Sheng-Kai Liao}
+%\email[]{Chenwei4@mail.ustc.edu.cn}
+%\homepage[]{Your web page}
+%\thanks{}
+%\altaffiliation{}
+\affiliation{Shanghai Branch, National Laboratory for Physical Sciences at Microscale and Department of Modern Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Shanghai Branch, CAS Center for Excellence and Synergetic Innovation Center in Quantum Information and Quantum Physics, University of Science and Technology of China, Shanghai, 201315, China}
+
+\author{Cheng-Zhi Peng}
+%\email[]{Chenwei4@mail.ustc.edu.cn}
+%\homepage[]{Your web page}
+%\thanks{}
+%\altaffiliation{}
+\affiliation{Shanghai Branch, National Laboratory for Physical Sciences at Microscale and Department of Modern Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Shanghai Branch, CAS Center for Excellence and Synergetic Innovation Center in Quantum Information and Quantum Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Anhui Key Laboratory of Physical Electronics, State Key Laboratory of Particle Detection and Electronics, Modern Physics Department, University of Science and Technology of China, Hefei 230026, China}
+% Collaboration name, if desired (requires use of superscriptaddress option in \documentclass).
+% \noaffiliation is required (may also be used with the \author command).
+%\collaboration{}
+%\noaffiliation
+
+\date{\today}
+
+\begin{abstract}
+A high voltage pulse generator, with nanosecond rise and fall times, large current driving capability, high repetition rate, short pulse duration and long lifetime, is presented in this paper by utilizing power Metal Oxide Semiconductor Field Effect Transistors (MOSFETs). \replaced{The generator is developed to match the requirement of the under-water QKD (Quantum Key Distribution) experiment, providing continuous 800V pulse with ten-nanoseconds scale rise and fall times at megahertz repetition, driving a KDP pockels cell equivalent to a 51pf load, which is beyond compare on performance and at the same time with much lower cost compared to commercial products on sale.}{The generator is deployed to provide powerful driving capability for pockels cells which changes the polarization of the photons in a series of experiment applications of quantum communication. A pair of high current RF MOSFETs are applied as drivers to realize high speed turning on and off of the power MOSFETs which generate and shape the high voltage pulse. The generator produces a 800V square pulse, whose rise time and fall time is 40.08ns and 25.45ns at the repetation rate of 1MHz in the continuous mode.} The megaherz high pulse generator can be used not only in the application of driving the pockels cell, but also in a variety of other usage scenarios where high voltage pulse at megaherz repetation is desired.
+\end{abstract}
+
+\pacs{}% insert suggested PACS numbers in braces on next line
+
+\maketitle %\maketitle must follow title, authors, abstract and \pacs
+
+% Body of paper goes here. Use proper sectioning commands.
+% References should be done using the \cite and \label commands
+
+\section{Introduction}
+% \replaced{
+% The underwater QKD experiment has great meaning in furthur quantum communication but never be done before in the wild environment, because it faces several technical challenges with exsiting equipments . One of the challenges is that the transmitter (Alice) requires a portable single photon source which generates extremely short photon pulse with high brightness in blue-green bands. At the same time, the polarization of the photons could be modulated according to the high rate ramdom numbers in real time. 
+% }
+%{
+Pockels effect is one of the most important optical effects. Because a pockels cells' response time is very fast, typically one nanosecond or less, it is usually used as an electronically controlled polarizers which are widely used in many quantum communication experiments. The Pockels cell can be regarded as a capacitor, thus the goal of high voltage pulse generator is to realize fast charging and discharging of the pockels cell. To reach the pratical purpose, the generator is required to have the ability of generating high voltage pulses with both nanosecond-scale rise time and fall time, and to have powerful driving capability and high repetition rate. Such high voltage pulse generator has promising applications in ultra-wideband (UWB) systems, biological electromagnetic effects, accelerator and plasma generation, etc.
+%}
+\added{
+In the proposal of the light source, there are two pockel cells in charge of shaping the photon into short pulse and three other pockel cells modulating the polarization.
+The pockels effect changes the birefringence proportional to the electric field, so pockels cells are voltage-controlled wave plates. 
+Pockels cells can be regarded as a capacitor, thus a high voltage pulse generator is needed in the experiment to realize fast charging and discharging of the pockels cell.
+To meet experimental requirements, the generator is required to have the ability of generating high voltage pulses with nanosecond-scale rise and fall times working at high repetition rate when driving a big capacitive load.
+}
+Currently, there are three main ways to generate high voltage pulses. 
+The first way is to make use of vacuum tubes such as the krytron, thyratron, or planar triode to generate high voltage pulse\cite{Rohwein1995improved}. 
+Such method is able to generate high voltage pulses with nanosecond rise or fall times, but the devices are cumbersome and the driver circuit is extremely complex. 
+The second way is based on avalanche transistor stack topology and avalanche Marx stack topology\cite{Fulkerson1997,Bidin2009}. 
+Although this method can generate high voltage pulse with rise time or fall time in nanoseconds or sub-nanoseconds, the repetition rate is still relatively low. 
+With the development of the semiconductor technologies, semiconductor devices, such as power MOSFET and the insulated gate bipolar transistor (IGBT), have very high potential for applications in generating compact, high repetitive rate, high voltage pulse \cite{wang2013semiconductor,Feng2011}. 
+They have significant advantages over traditional vacuum tubes and avalanche transistor in high performance, reduced cost, greatly reduced drive complexity. 
+The push-pull configuration based on power MOSFET have both nanosecond rise and fall times \cite{bernius1990improved}, this generator is adaptive for capacitive load and has a powerful driving capability for the pockels cell.However, we find that there is no such 
+In this paper, we design a high voltage pulse generator that provides high voltage pulses with amplitude of 800V at a repetition rate of 1MHz driving a capacitive load equivalent to 51pf. The widths of the high voltage pulse are adjustable from 300ns to 700ns with 40ns rise time and 25ns fall time. The generator is specific designed for capacitive load, but it also has widely application prospects where high voltage pulse generator is needed.
+
+\section{The high voltage pulse generator circuit}
+As illustrated in Fig.~\ref{Fig1}, the high voltage pulse generator contains three main parts: a gate driver circuit, a pulse generator circuit, and a high voltage power supply. The gate driver circuit could generate a pair of short trigger signals to rapidly turn on and off the power MOSFETs Q1 and Q2. The high voltage pulse generator circuit is used to generate high voltage pulse with fall time and rise time in nanosecond-scale, which is achieved by fast turning on and off the two MOSFETs Q1 and Q2 in sequence. The high voltage power supply can provide voltage in range of $0\sim1$KV with current up to 500mA.
+
+
+In the following, we will discuss the three main parts of the design in detail.
+
+\subsection{The gate driver circuit}
+The gate driver circuit mainly consists of two RF MOSFET drivers and two AC coupling circuits. The power MOSFET is voltage driven switches, thus it is able to greatly reduce the complexity of the driver circuit. The high current gate driver IXRFD630 is chosen because it can source and sink 30A of peak current while producing voltage rise and fall times of less than 4ns and minimum pulse width of 8ns. The gate driver circuit requires 15V DC power supply for IXRFD630. To supply instantaneous high current and filter out high frequency noise, three different package capacitors are located at the VCC pins of U1 and U2.
+\begin{figure*}
+%\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
+\resizebox{12cm}{!}{\includegraphics[scale=1]{FIG1}}
+\caption{Schematic diagram of high voltage generator circuit.\label{Fig1}}%
+\end{figure*}
+
+
+	The output pin of the RF MOSFET U1 is directly connected to AC coupling capacitance C1 and resistance R5. Because the primary isolation transformer can be equivalently regarded as an inductor L1, the H-trigger signals will pass through an RLC circuit. When resistor satisfies $R_5\ge 2\sqrt{L1/C1}$, the RLC circuit will operate in over-damped condition and the oscillation will be highly suppressed. In the experiment, the value of the induction L1 and the coupling capacitor is about 10uH and 100nF, so the over-damped condition requires $R1\ge20$ohm.
+
+	The AC coupling circuits are adopted to reduce the power dissipation of U1 and U2, the power dissipation can calculate by $P= Qg*Vp*F$, where $VP$ is the supply voltage of the driver chip, $Qg$ is the total gate charge of the power MOSFET, and $F$ is the switching frequency. In the experiment, given the value of $Qg$, $Vp$, and $F$ being 70nC, 15volts, and  1MHz, respectively, we can calculate $P1$ to be 1.05W and the total two gate driver dissipation to be 2.1W.
+
+\subsection{Pulse generator circuit}
+The pulse generator circuit is the key part of the system, where the push-pull configuration is introduced to enhance the output driving ability and generate a high voltage pulse with nanosecond-scale rise and fall times. 
+The generator circuit consists of two main parts: two pulse isolation transformers and a push-pull configuration circuit.
+
+
+Isolation transformer is a very popular and effective tool in achieving current isolation. 
+Because the high side power MOSFET Q1 of the push pull configuration is floating, a high repetition pulse isolation transformer is applied to achieve galvanic isolation between Q1 and the front part of the gate drive circuit. 
+The pulse isolation transformer, which consists of a Ni-Zn ferrite core, has a $1:1$ ratio of the primary coil and secondary coil.
+
+The push-pull configuration circuit main contains two FAIRCHILED POWER MOSFETs FQA8N100C denoted by Q1 and Q2, whose rating voltage is 1000V, with corresponded continuous drain current being 8A and RDS(on) being 1.45ohm.
+The input high voltage power supply is connected to the drain of the Q1. The gate of Q1 is floating and connected to the secondary of T1 through the dampen resistor R3. 
+The drain of the Q2 is connected with the source of the Q1 and the source of Q2 is connected to the ground. 
+In the design, resistor R4 and R3 with resistance $3.3\Omega$ are used to dampen the gate drive ring.
+We show the trigger timing diagram and the waveform of output high voltage pulse in Fig.~\ref{FIG2}. 
+When the H-trigger signal arrives at the gate terminal of the high side POWER MOSFET Q1, Q1 turns on, and the CLoad is charged to 800Volts in 40ns. 
+Once the L-trigger signal arrives at the low side POWER MOSFET Q2, Q2 turns on, the drain of the Q2 is grounded and the load like pockel cells, which is equivalent to a capacitor, is discharged to 0Volts in 25ns through Q2. 
+The zener diode D1 is used to guarantee that the gate-source voltage of MOSFET does not exceed the max permitted voltage, and the resistor R6 is to provide a low impedance channel to release the gate charge.
+\begin{figure}
+%\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "F:\study2\pockel paper\REVIEW OF SCIENTIFIC INSTRUMENTS\latex\fig2.eps"
+\resizebox{8cm}{!}{\includegraphics[scale=1]{FIG2}}
+\caption{The trigger timing diagram and the output high voltage pulse. \label{FIG2}}%
+\end{figure}
+
+\subsection{High voltage power supply}
+
+
+	The high voltage power supply is used to provide high voltage up to 1kv and deliver current up to 500mA for the pulse generator circuit. 
+In fact, the traditional high voltage power supply cannot provide sufficient enough instantaneous current. 
+In this paper, a capacitor group consisting of twenty high voltage ceramic capacitors is demonstrated, which could provide large enough instantaneous current for the pulse generator circuit.
+
+Because of the properties like fast rise-fall time, high repetition rate, and high instantaneous current, the following factors  such as ground splitting, high voltage trace width and components layouts should all be taken into careful consideration for electromagnetic interference (EMI) suppression and signal integrity.
+In the design, the PCB is partitioned into drivers section and pulse generator section, thus the ground is correspondingly split into two parts, which are connected together by a special handmade transformer, to present the EMI from the pulse generator section influencing the drivers section.
+
+\section{Test Result}
+In use cases, we test the high voltage pulse generator circuit loading with a capacitor 51pF.  As illustrated in Fig.~\ref{FIG3}, the test setup is composed of 6 main instruments, including a arbitrary generators AFG3252 which provides one pair of  TTL signals at repetition rate of 1MHz, a  linear programmable power supply LPS305 which is used to provide 15V for the gate driver IXRFD630, a water circulating system which cools the power MOSFETs and the MOSFET drivers,  
+%In our work, we test the high voltage pulse generator circuit test with CLoad  is 51pF. As shown in Fig.~\ref{FIG3}, the test setup consists of the following components, including a modern general-purpose arbitrary generators AFG3252, which provides a pair of TTL signals with repletion rate is 1MHz, a linear programmable power supply LPS305, which is used to provide 15Volts for the gate driver IXRFD630, a water circulating system, which is used to cool the power MOSFETs and the MOSFET drivers, 
+a Tektronix DPO4104 oscilloscope which is applied to record the high voltage pulse waveform, a P5100A high voltage probe which is a high impedance probe with 100X attenuation, and a DH1722A-6 which is applied to supply high voltage.
+
+\begin{figure}
+%\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
+\resizebox{8cm}{!}{\includegraphics[scale=1]{FIG3}}
+\caption{The high voltage pulse generator test setup. \label{FIG3}}%
+\end{figure}
+
+The waveform of the output high voltage pulse is shown in Fig.~\ref{Fig4}. The $10\%~90\%$ fall time is about $25ns$ and the rise time is $40 ns$, the amplitude of the high voltage pulses is $800V$ and the repetition rate is $1MHz$.
+
+\begin{figure}
+%\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
+\resizebox{8cm}{!}{\includegraphics[scale=1]{FIG4}}
+\caption{Output voltage waveform of the push pull circuit.\label{Fig4}}%
+\end{figure}
+
+\begin{figure}
+%\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
+\resizebox{8cm}{!}{\includegraphics[scale=1]{FIG5}}
+\caption{The voltage-current curve of the driver.\label{FIG5}}%
+\end{figure}
+
+\begin{figure}
+%\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
+\resizebox{8cm}{!}{\includegraphics[scale=1]{FIG6}}
+\caption{The high voltage is set to 800volts and continuous operation 110 minutes.\label{Fig6}}%
+\end{figure}
+As shown in Fig.~\ref{FIG5}, the output current of the high voltage source is recorded for different voltages with interval 100V. Note that, when the voltage is less than 600V, the current is a linear function of the voltage with slope being $0.48A/kV$. With increasing voltage, the temperature of the power MOSFET chip increases, thus the current consumption in the driver circuit also increases, and the slope of the voltage-current curve changes to $0.6A/kV$.
+
+To test the stability, the driver circuit works continuously for 110 minutes. For every 10 minutes, the voltage and current of the high voltage source is recorded, as shown in Fig.~\ref{Fig6}. It is not hard to conclude that the fluctuation of the voltage is less than 10V and the fluctuation of the current is less than 10mA. We thus demonstrate that the driver circuit is able to work stably continuously under long time.
+
+
+\section{Conclusion}
+In this paper, the push pull configuration circuit is applied to design the high voltage pulse generator which is suitable for capacitive load. The high voltage pulse generator is designed and tested successfully which met all the required specifications. The high voltage square pulses have both fast rise and fall times with the repetition rate being 1MHz in continuous mode.
+% If in two-column mode, this environment will change to single-column format so that long equations can be displayed.
+% Use only when necessary.
+%\begin{widetext}
+%$$\mbox{put long equation here}$$
+%\end{widetext}
+
+% Figures should be put into the text as floats.
+% Use the graphics or graphicx packages (distributed with LaTeX2e). EPSFig is no longer fully supported.
+% See the LaTeX Graphics Companion by Michel Goosens, Sebastian Rahtz, and Frank Mittelbach for examples.
+%
+% Here is an example of the general form of a figure:
+% Fill in the caption in the braces of the \caption{} command.
+% Put the label that you will use with \ref{} command in the braces of the \label{} command.
+%
+% \begin{figure}
+% \includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
+% \caption{\label{}}%
+% \end{figure}
+
+% Tables may be be put in the text as floats.
+% Here is an example of the general form of a table:
+% Fill in the caption in the braces of the \caption{} command. Put the label
+% that you will use with \ref{} command in the braces of the \label{} command.
+% Insert the column specifiers (l, r, c, d, etc.) in the empty braces of the
+% \begin{tabular}{} command.
+%
+% \begin{table}
+% \caption{\label{} }
+% \begin{tabular}{}
+% \end{tabular}
+% \end{table}
+
+% If you have acknowledgments, this puts in the proper section head.
+%\begin{acknowledgments}
+% Put your acknowledgments here.
+%\end{acknowledgments}
+
+% Create the reference section using BibTeX:
+\bibliography{AIPBIB}
+% Run this once to generate your BBL file. Then copy the contents of your BBL file into your main latex file, commenting out "\bibliography"
+
+\end{document}
+%
+% ****** End of file aiptemplate.tex ******
