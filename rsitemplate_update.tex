@@ -25,7 +25,7 @@
 % Multiple \preprint commands are allowed.
 %\preprint{}
 
-\title{Megahertz high voltage pulse generator for pockels cell using power MOSFET} %Title of paper
+\title{Megahertz high voltage pulse generator for Pockels cell based on power MOSFET} %Title of paper
 
 % repeat the \author .. \affiliation  etc. as needed
 % \email, \thanks, \homepage, \altaffiliation all apply to the current author.
@@ -36,7 +36,6 @@
 % \affiliation command applies to all authors since the last \affiliation command.
 % The \affiliation command should follow the other information.
 \author{Yu Xu}
-\email[]{xuyu0922@mail.ustc.edu.cn}
 %\homepage[]{Your web page}
 %\thanks{}
 %\altaffiliation{}
@@ -62,8 +61,16 @@
 \affiliation{Shanghai Branch, CAS Center for Excellence and Synergetic Innovation Center in Quantum Information and Quantum Physics, University of Science and Technology of China, Shanghai, 201315, China}
 \affiliation{Anhui Key Laboratory of Physical Electronics, State Key Laboratory of Particle Detection and Electronics, Modern Physics Department, University of Science and Technology of China, Hefei 230026, China}
 
-\author{Sheng-Kai Liao}
+\author{Yu-Huai Li}
 %\email[]{Chenwei4@mail.ustc.edu.cn}
+%\homepage[]{Your web page}
+%\thanks{}
+%\altaffiliation{}
+\affiliation{Shanghai Branch, National Laboratory for Physical Sciences at Microscale and Department of Modern Physics, University of Science and Technology of China, Shanghai, 201315, China}
+\affiliation{Shanghai Branch, CAS Center for Excellence and Synergetic Innovation Center in Quantum Information and Quantum Physics, University of Science and Technology of China, Shanghai, 201315, China}
+
+\author{Sheng-Kai Liao}
+\email[]{skliao@ustc.edu.cn}
 %\homepage[]{Your web page}
 %\thanks{}
 %\altaffiliation{}
@@ -87,10 +94,10 @@
 
 \begin{abstract}
   % A high voltage pulse generator, with nanosecond rise and fall times, large current driving capability, high repetition rate, short pulse duration and long lifetime, is presented in this paper by utilizing power Metal Oxide Semiconductor Field Effect Transistors (MOSFETs).
-  This paper introduces a high pulse generator working at megahertz repetition rate, which has the rise and fall times in ten-nanoseconds as well as the adjustable short pulse duration, and the charactor of large driving ability for the capacitive load. 
- % \replaced{The generator is developed to match the requirement of the under-water QKD (Quantum Key Distribution) experiment, providing continuous 800V pulse with ten-nanoseconds scale rise and fall times at megahertz repetition, driving a KDP pockels cell equivalent to a 51pf load, which is beyond compare on performance and at the same time with much lower cost compared to commercial products on sale.}
-The generator is deployed to provide powerful driving capability for pockels cells which changes the polarization of the photons in a series of experiment applications of quantum communication. A pair of high current RF MOSFETs are applied as drivers to realize high speed switch of the power MOSFETs which generate and shape the high voltage pulse. The generator produces a 800 V square pulse, whose rise time and fall time is 40 ns and 25 ns at the repetation rate of 1 MHz in the continuous mode.
- The megaherz high pulse generator can be used not only in the application of driving the pockels cell, but also in a variety of other usage scenarios where high voltage pulse at megaherz repetation is desired.
+  This paper introduces a high voltage pulse generator working at megahertz repetition rate,  with fast rise and fall times, a adjustable pulse duration, and a large driving ability for the capacitive load. 
+ % \replaced{The generator is developed to match the requirement of the under-water QKD (Quantum Key Distribution) experiment, providing continuous 800V pulse with ten-nanoseconds scale rise and fall times at megahertz repetition, driving a KDP Pockels cell equivalent to a 51pf load, which is beyond compare on performance and at the same time with much lower cost compared to commercial products on sale.}
+ A pair of high current RF MOSFETs are applied as drivers to realize high speed switch of the power MOSFETs which generate and shape the high voltage pulse. The generator produces 800 V square pulses continuously at the repetition rate of 1 MHz with rise (fall) time of 40 ns (25 ns) when driving a load of 51 pF.
+ The generator is deployed to provide powerful driving capability for Pockels cells which changes the polarization of the photons in a series of quantum information experiments. It can also be applied in a variety of other usage scenarios where high voltage pulse at high repetition is desired.
 \end{abstract}
 
 \pacs{}% insert suggested PACS numbers in braces on next line
@@ -101,46 +108,39 @@ The generator is deployed to provide powerful driving capability for pockels cel
 % References should be done using the \cite and \label commands
 
 \section{Introduction}
-% \replaced{
-% The underwater QKD experiment has great meaning in furthur quantum communication but never be done before in the wild environment, because it faces several technical challenges with exsiting equipments . One of the challenges is that the transmitter (Alice) requires a portable single photon source which generates extremely short photon pulse with high brightness in blue-green bands. At the same time, the polarization of the photons could be modulated according to the high rate ramdom numbers in real time. 
-% }
-%{
-Pockels effect is one of the most important optical effects. Because a pockels cells' response time is very fast, typically one nanosecond or less. it is usually used as an high repetitive electronically controlled polarizers, driven by high voltage pulses fast switching between the zero-wave and half-wave voltage, which are widely applied in many quantum scientific experiments\cite{yin2017satellite}.
-It is revealed in quantum communication experiments that the key generation rate increases as the switch rate of the pockel cell boosts\cite{li2016experimental}. The delays and the loss in photons transmission will be smaller if the experiments like Boson sampling\cite{wang2017high} could be made with higher switch rate of the pockels cell.
-Despite the response time of pockels cell crystal itself, the switch rate of pockels cell almost equals to the repetition rate of the drivers, the high pulse generator.
-Thus, the repetition rate of the high pulse generator turns out to be one of the key points in improving the result in series of quantum scientific experiments.
-The Pockels cell can be regarded as a capacitor, so the high pulse generator specifically designed for pockels cell actually realize fast charging and discharging of a capacitive load, which makes it harder to improve the repetition rate compared with a resistive load.
- % Thus, a adjustable high voltage square pulse generator working at megahertz repetition rate is desirable in the underwater quantum key distribution (QKD) experiment. 
- To meet most of the experimental requirements, a generator having the ability of generating 0-800 V adjustable voltage pulses with below 50 ns rise and fall times, while working at megahertz repetition rate when driving over 50 pf capacitive load, is required.
- % However, almost all the high-voltage generators on sale could not meet the requirement above mentioned. We have to design our own generator to make through with the experiment, realizing fast manipulating the pockel cells. 
- % To reach the pratical purpose, the generator is required to have the ability of generating high voltage pulses with both nanosecond-scale rise time and fall time, and to have powerful driving capability and high repetition rate. Such high voltage pulse generator has promising applications in ultra-wideband (UWB) systems, biological electromagnetic effects, accelerator and plasma generation, etc.
-%}
-% \added{
-% In the proposal of the light source, there are two pockel cells in charge of shaping the photon into short pulse and three other pockel cells modulating the polarization.
-% The pockels effect changes the birefringence proportional to the electric field, so pockels cells are voltage-controlled wave plates. 
-% Pockels cells can be regarded as a capacitor, thus a high voltage pulse generator is needed in the experiment to realize fast charging and discharging of the pockels cell.
-% To meet experimental requirements, the generator is required to have the ability of generating high voltage pulses with nanosecond-scale rise and fall times working at high repetition rate when driving a big capacitive load.
-% }
+Linear electro-optic effect, as known as the Pockels effect, is widely used for modulating amplitude, polarization or phase of photons. Owing to the ultra-fast response time, Pockels cells play critical roles in quantum information experiments,
+ such as selecting measurement bases in quantum key distribution and quantum entanglement distribution\cite{yin2017satellite,giustina2015significant,shalm2015strong},
+ arranging propagating path of pulses\cite{li2016experimental,wang2017high},
+ or performing Q-swithcing in laser cavities\cite{kwiat1995interaction}.
+ For such applications, the rise and fall time and the repetition rate become key parameters for Pockels cells.
+ Generally speaking, higher repetition rate corresponds to higher trial rate, which is strongly desired for quantum information experiments. 
 
-Currently, there are three main ways to generate high voltage pulses. 
+A Pockels cell is usually constituted of one or two electro-optic crystals, and modulated by an external electric field. For common electro-optic crystals such as KDP, KTP or BBO, the external electric field needs to be at the order of 100 kV/m to accumulate $\pi$-phase retardation per 100 millimeters. 
+Achieving this high voltage together with the demands of a fast rise/fall time and high repetition rate is the main goal and also the difficulty when building drivers for Pockels cells for quantum information experiments. 
+
+The Pockels cell can be regarded as a capacitor, so the high voltage pulse generator specifically designed for a Pockels cell actually realizes fast charging and discharging of a capacitive load, which makes it harder to raise the repetition rate compared to a resistive load.
+ 
+To meet the requirements of most experiment, several key parameters need to be satisfied for the generator: pulse repetition rate over 1 megahertz, voltage adjustable from 0 V to over 800 V, rise and fall times below 50 ns, and driven capacitive load over 50 pF.
+
+Currently, there are three main ways to realize a high voltage pulse generator. 
 The first way is to make use of vacuum tubes such as the krytron, thyratron, or planar triode to generate high voltage pulses\cite{Rohwein1995improved}. 
-Such method is able to generate high voltage pulses with nanosecond rise or fall times, but the devices are bulky and the circuit is complicated. 
+Nanosecond rise and fall times could be achieved with such method. However, the devices are bulky and the circuit is complicated. 
 The second way is based on avalanche transistor stack topology and avalanche Marx stack topology\cite{Fulkerson1997,Bidin2009,bishop2006subnanosecond}. 
-Although this method can generate high voltage pulse with rise time or fall time in nanoseconds or sub-nanoseconds, the repetition rate is still relatively low. 
-With the development of the semiconductor technologies, semiconductor devices, such as power MOSFET and the insulated gate bipolar transistor (IGBT), have very high potential for applications in generating compact, high repetitive rate, high voltage pulse \cite{wang2013semiconductor,Feng2011}. 
-They have significant advantages over traditional vacuum tubes and avalanche transistor in high performance, reduced cost, greatly reduced drive complexity. 
-The push-pull configuration based on power MOSFET have both nanosecond rise and fall times \cite{bernius1990improved}, this generator is adaptive for capacitive load and has a powerful driving capability for the pockels cell.\par 
-In this paper, with the help of the self-made isolated transformers as well as the water cooling down system, we design a high voltage pulse generator that provides high voltage pulses with viriable amplitude of 0-800 V working at a repetition rate of 1 MHz when driving a capacitive load equivalent to 51 pf.
- The widths of the high voltage pulse are adjustable from 300 ns to 700 ns with 40 ns rise time and 25 ns fall time.
+Although this method can generate high voltage pulses with rise time and fall time in the scale of nanoseconds or sub-nanoseconds, the repetition rate is still relatively low. 
+With the development of the semiconductor technologies, semiconductor devices, such as power MOSFET and the insulated gate bipolar transistor (IGBT) have very high potential for applications in generating high repetition rate, high voltage pulses \cite{wang2013semiconductor,Feng2011}. 
+They have significant advantages over traditional vacuum tubes and avalanche transistors in performance, cost, and drive complexity. 
+The push-pull configuration based on power MOSFET have both nanosecond rise and fall times \cite{bernius1990improved}, this generator is adapted for capacitive load and has a powerful driving capability for the Pockels cell.\par 
+In this paper, with the help of the self-made transformers and the a water cooling system, we designed a high voltage pulse generator that provides high voltage pulses with a variable amplitude from 0 to 800 V that works at a repetition rate of 1 MHz when driving a capacitive load equivalent to 51 pF.
+ The widths of the high voltage pulses are adjustable from 300 ns to 700 ns with 40 ns rise time and 25 ns fall time.
  % With the help of the innovation in components self-made, the generator is able to supply all the above-mentioned parameters, which is beyond compare on performance with more simplified circuit.
- The generator is specifically designed for capacitive load, but it also has widely application prospects where high voltage pulse generator is needed.
+ The generator is specifically designed for capacitive load, but it also has wide application prospects where high voltage pulse generators is needed.
 
 \section{The high voltage pulse generator circuit}
-As illustrated in Fig.~\ref{Fig1}, the high voltage pulse generator contains two main parts: a gate driver circuit triggered by external input, a pulse generator circuit with a high voltage power supply. The gate driver circuit could generate a pair of short trigger signals to switch the power MOSFETs Q1 and Q2. The high voltage pulse generator circuit is used to generate high voltage pulse with fall time and rise time in ten-nanoseconds, which is achieved by fast turning on and off the two MOSFETs Q1 and Q2 in sequence. The high voltage power supply can provide voltage in range of $0\sim1$ kV with current up to 500 mA.
+As illustrated in Fig.~\ref{Fig1}, the high voltage pulse generator contains two main parts: a gate driver circuit triggered by external input, and a pulse generator circuit with a high voltage power supply. The gate driver circuit can generate a pair of short trigger signals to switch the power MOSFETs Q1 and Q2. The high voltage pulse generator circuit is used to generate high voltage pulses with fall time and rise time in ten-nanoseconds, which is achieved by quickly turning on and off the two MOSFETs Q1 and Q2 in sequence. The high voltage power supply can provide voltage in range of $0\sim1$ kV with current up to 500 mA.
 
 \begin{figure}[hbt]
 %\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
-\resizebox{8cm}{!}{\includegraphics[scale=1]{FIG1.png}}
+\resizebox{8cm}{!}{\includegraphics[scale=1]{FIG1}}
 \caption{Schematic diagram of high voltage generator circuit.\label{Fig1}}%
 \end{figure}
 
@@ -148,24 +148,27 @@ In the following, we will discuss the two main parts of the design in detail.
 
 \subsection{The gate driver circuit}
 The gate driver circuit mainly consists of two RF MOSFET drivers and two AC coupling circuits.
- The power MOSFET is voltage driven switches, which is able to greatly reduce the complexity of the driver circuit.
+ The power MOSFET is a voltage driven switch, which is able to greatly reduce the complexity of the driver circuit.
  The high current gate driver IXRFD630 is chosen because it can deliver 30 A of peak current while producing voltage rise and fall times of less than 4 ns and minimum pulse width of 8 ns.
  The gate driver circuit requires 15 V DC power supply for IXRFD630.
  To supply instantaneous high current and filter out high frequency noise, three different package capacitors are located at the VCC pins of U1 and U2.
-	The output pin of the RF MOSFET U1 is directly connected to AC coupling capacitance C1 and resistance R5. Because the primary isolation transformer can be equivalently regarded as an inductor L1, the H-trigger signals will pass through an RLC circuit. When resistor satisfies $R_5\ge 2\sqrt{L1/C1}$, the RLC circuit will operate in over-damped condition and the oscillation will be highly suppressed. In the experiment, the value of the induction L1 and the coupling capacitor is about 10 uH and 100 nF, so the over-damped condition requires $R1\ge20$ ohm.
+	The output pin of the RF MOSFET U1 is directly connected to AC coupling capacitance C1 and resistance R5. Because the primary isolation transformer can be equivalently regarded as an inductor L1, the H-trigger signals will pass through an RLC circuit. When resistor satisfies $R_5\ge 2\sqrt{L1/C1}$, the RLC circuit will operate in over-damped condition and the oscillation will be highly suppressed. In the experiment, the value of the induction L1 and the coupling capacitor is about 10 uH and 100 nF, so the over-damped condition requires $R5\ge20$ ohm.
 
-	The AC coupling circuits are adopted to reduce the power dissipation of U1 and U2, the power dissipation can calculate by $P= Q_{g}*V_{p}*F$, where $V_{p}$ is the supply voltage of the driver chip, $Q_{g}$ is the total gate charge of the power MOSFET, and $F$ is the switching frequency. In the experiment, given the value of $Q_{g}$, $V_{p}$, and $F$ being 70 nC, 15 V, and  1 MHz, respectively, we can calculate $P1$ to be 1.05W and the total two gate driver dissipation to be 2.1W.
+	% The AC coupling circuits are adopted to reduce the power dissipation of U1 and U2, the power dissipation can calculate by $P= Q_{g}*V_{p}*F$, where $V_{p}$ is the supply voltage of the driver chip, $Q_{g}$ is the total gate charge of the power MOSFET, and $F$ is the switching frequency. In the experiment, given the value of $Q_{g}$, $V_{p}$, and $F$ being 70 nC, 15 V, and  1 MHz, respectively, we can calculate $P1$ to be 1.05 W and the total two gate driver dissipation to be 2.1 W.
 
-\subsection{Pulse generator circuit}
+\subsection{The pulse generator circuit}
 The pulse generator circuit is the key part of the system, where the push-pull configuration is introduced to enhance the output driving ability and generate a high voltage pulse with ten-nanoseconds scale rise and fall times. 
 The generator circuit consists of three main parts: two pulse isolation transformers, a push-pull configuration circuit and the high voltage power supply.
- Isolation transformer is a very popular and effective tool in achieving current isolation. 
- Because the high side power MOSFET Q1 of the push pull configuration is floating, a high repetition pulse isolation transformer is applied to achieve galvanic isolation between Q1 and the front part of the gate drive circuit. 
+ The isolation transformer is a very popular and effective tool in achieving current isolation. 
+ Because the high side power MOSFET Q1 of the push pull configuration is floating, a high repetition pulse isolation transformer is applied to achieve galvanic isolation between Q1 and the output of the gate drive circuit. 
  % When the high side switch turns on, secondary of the transformer will operate under 800 V floating voltage at megahertz repetition rate.
- However, commercially obtainable isolated gate driver like ADuM1233 could only be operated up to 700 V between high side and low side and work at maxium 5 MHz. In order to work through this challenge, we make some reserches and design our own isolated transformers to meet the both requirment in high voltage and high repetition rate.
- NiZn (Nickel Zinc) family of ferrites is characterized by permeabilities $\mu\le2500$ but high transmission line broadband and practical frequency up to 1 GHz\cite{TDKNiZn}.
- A ring-shaped NiZn ferrite is chosen as the core of the transformer.
- The primary and secondary windings whose break down voltage reaches 10 kV are braided in alternate direction around the ring-shaped core to minimize the skin-effect and proximity effect losses \cite{Dixon2001power}, and the turns ratio is 1:1.
+ However, commercially obtainable isolated gate drivers like ADuM1233 can only be operated up to 700 V and at maximum 5 MHz.
+
+ In order to work through this challenge, we designed our own isolated transformers to meet both requirement in high voltage and high repetition rate.
+ The NiZn (Nickel Zinc) family of ferrites is characterized by permeabilities $\mu\le2500$,  high transmission line bandwidth, and practical frequency% \cite{TDKNiZn}.
+ A ring-shaped NiZn ferrite was chosen as the core of the transformer.
+ The primary and secondary windings whose break down voltage reaches 10 kV are braided in alternate directions around the ring-shaped core % \cite{Dixon2001power}
+, and the turns ratio is 1:1.
 
 \begin{figure}[hbt]
   % \centering
@@ -178,57 +181,43 @@ The generator circuit consists of three main parts: two pulse isolation transfor
 
 % The pulse isolation transformer, which consists of a Ni-Zn ferrite core, has a $1:1$ ratio of the primary coil and secondary coil.
 
-The push-pull configuration circuit main contains two FAIRCHILED POWER MOSFETs FQA8N100C denoted by Q1 and Q2, whose rating voltage is 1000 V, with corresponded continuous drain current being 8A and RDS(on) being 1.45 ohm.
-The input high voltage power supply is connected to the drain of the Q1. The gate of Q1 is floating and connected to the secondary of T1 through the dampen resistor R3. 
-The drain of the Q2 is connected with the source of the Q1 and the source of Q2 is connected to the ground. 
-In the design, resistor R4 and R3 with resistance $3.3 \Omega$ are used to dampen the gate drive ring.
-We show the trigger timing diagram and the waveform of output high voltage pulse in Fig.~\ref{FIG2}. 
-When the H-trigger signal arrives at the gate terminal of the high side POWER MOSFET Q1, Q1 turns on, and the CLoad is charged to 800 V in 40 ns. 
-Once the L-trigger signal arrives at the low side POWER MOSFET Q2, Q2 turns on, the drain of the Q2 is grounded and the load like pockel cells, which is equivalent to a capacitor, is discharged to 0 V in 25 ns through Q2. 
+The push-pull configuration circuit mainly contains two FAIRCHILED POWER MOSFETs FQA8N100C denoted by Q1 and Q2, whose voltage rating is 1000 V, with corresponded continuous drain current being 8 A and RDS(on) being 1.45 ohm.
+The input high voltage power supply is connected to the drain of Q1. The gate of Q1 is floating and connected to the secondary of T1 through the damping resistor R3. 
+The drain of Q2 is connected with the source of Q1, and the source of Q2 is connected to the ground. 
+In the design, resistor R4 and R3 with resistance $3.3 \Omega$ are used to dampen the gate drive ringing.
+The trigger timing diagram and the waveform of output high voltage pulse are shown in Fig.~\ref{FIG2}. 
+When the H-trigger signal arrives at the gate terminal of the high side POWER MOSFET Q1, Q1 turns on, and the capacitive load is charged to 800 V in 40 ns. 
+Once the L-trigger signal arrives at the gate of the low side POWER MOSFET Q2, Q2 turns on, the drain of the Q2 is grounded and the load like Pockel cells, which are equivalent to a capacitor, is discharged to 0 V in 25 ns through Q2. 
 The zener diode D1 is used to guarantee that the gate-source voltage of MOSFET does not exceed the max permitted voltage, and the resistor R6 is to provide a low impedance channel to release the gate charge.
 \begin{figure}[hbt]
-%\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "F:\study2\pockel paper\REVIEW OF SCIENTIFIC INSTRUMENTS\latex\fig2.eps"
-\resizebox{8cm}{!}{\includegraphics[scale=1]{FIG2}}
+%\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "F:\study2\Pockel paper\REVIEW OF SCIENTIFIC INSTRUMENTS\latex\fig2.eps"
+\resizebox{8cm}{!}{\includegraphics[scale=1.25]{FIG2}}
 \caption{The trigger timing diagram and the output high voltage pulse. \label{FIG2}}%
 \end{figure}
-	The high voltage power supply is used to provide high voltage up to 1 kV and deliver current up to 500 mA for the pulse generator circuit. 
-In fact, the traditional high voltage power supply cannot provide sufficient enough instantaneous current. 
-In this paper, a capacitor group consisting of ten high voltage ceramic capacitors is demonstrated, which could provide large enough instantaneous current for the pulse generator circuit.
+
+	A high voltage power supply is used to provide high voltage up to 1 kV and can deliver current up to 500 mA for the pulse generator circuit. 
+In fact, a traditional high voltage power supply cannot provide sufficient enough instantaneous current. 
+In this paper, a capacitor group consisting of ten high voltage ceramic capacitors is utilized, which can provide large enough instantaneous current for the pulse generator circuit.
 Because of the properties like fast rise-fall time, high repetition rate, and high instantaneous current, the following factors,  such as ground splitting, high voltage trace width and components layouts should all be taken into careful consideration for electromagnetic interference (EMI) suppression and signal integrity.
-In the design, the PCB is partitioned into drivers section and pulse generator section, thus the ground is correspondingly split into two parts, which are connected together by the self-designed transformer, to present the EMI from the pulse generator section influencing the drivers section.
+In the design, the PCB is partitioned into a drivers section and a pulse generator section, thus the ground is correspondingly split into two parts, which are connected together by the self-designed transformer, to prevent the EMI from influencing the drivers section.
 
 \section{Test Result}
-In use cases, we test the high voltage pulse generator circuit loading with a capacitor 51 pF which is exactly the value of the equivalent capacitive load of the pockels cell M350-50 from ConOptics company.  As illustrated in Fig.~\ref{FIG3}, the test setup is composed of 5 main instruments, including the megaherz high pulse generator (a), a arbitrary generators AFG3252 (b) which provides one pair of  TTL signals at repetition rate of 1MHz in stead of the FPGA in the practical cases, a water circulating system (c) which cools the power MOSFETs and the MOSFET drivers,  
-%In our work, we test the high voltage pulse generator circuit test with CLoad  is 51pF. As shown in Fig.~\ref{FIG3}, the test setup consists of the following components, including a modern general-purpose arbitrary generators AFG3252, which provides a pair of TTL signals with repletion rate is 1MHz, a linear programmable power supply LPS305, which is used to provide 15Volts for the gate driver IXRFD630, a water circulating system, which is used to cool the power MOSFETs and the MOSFET drivers, 
-a Tektronix DPO4104 oscilloscope (d) which is applied to record the high voltage pulse waveform, a DH1722A-6 (e) which is applied to supply high voltage.
+In use cases, we test the high voltage pulse generator circuit loading using a capacitor with 51 pF which is exactly the value of the equivalent capacitive load of the Pockels cell M350-50 from ConOptics.  As illustrated in Fig.~\ref{FIG3}, the test setup is composed of 5 main instruments, including a megahertz high voltage pulse generator (a), an arbitrary generators AFG3252 (b) which provides one pair of TTL signals at repetition rate of 1 MHz in stead of the FPGA in the practical cases, a water circulation system (c) which cools the power MOSFETs and the MOSFET drivers,  
+a Tektronix DPO4104 oscilloscope (d) which is applied to record the high voltage pulse waveform, and a DH1722A-6 (e) which is applied to supply high voltage.
 \begin{figure}[hbt]
 %\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
 \resizebox{8cm}{!}{\includegraphics[scale=1]{FIG3}}
 \caption{The high voltage pulse generator test setup. \label{FIG3}}%
 \end{figure}
-The waveform of the output high voltage pulse is shown in Fig.~\ref{Fig4}. The $10\%~90\%$ fall time is about $25ns$ and the rise time is $40 ns$, the amplitude of the high voltage pulses is $800V$ and the repetition rate is $1MHz$.
+The waveform of the output high voltage pulse is shown in Fig.~\ref{Fig4}. The $10\%~90\%$ fall time is about $25ns$ and the rise time is $40 ns$, the amplitude of the high voltage pulses is $800V$ and the repetition rate is $1MHz$. There is no further attempt made to increase the repetition rate, although this is possible.
 \begin{figure}[hbt]
 %\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
 \resizebox{8cm}{!}{\includegraphics[scale=1]{FIG4}}
 \caption{Output voltage waveform of the push pull circuit.\label{Fig4}}%
 \end{figure}
 
-% \begin{figure}
-% %\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
-% \resizebox{8cm}{!}{\includegraphics[scale=1]{FIG5}}
-% \caption{The voltage-current curve of the driver.\label{FIG5}}%
-% \end{figure}
-
-% \begin{figure}
-% %\includegraphics{}% % Important NOTE: Please make certain your figures do not include local directory paths. ex. "c:\file\sub\fig1.eps"
-% \resizebox{8cm}{!}{\includegraphics[scale=1]{FIG6}}
-% \caption{The high voltage is set to 800volts and continuous operation 110 minutes.\label{Fig6}}%
-% \end{figure}
-% As shown in Fig.~\ref{FIG5}, the output current of the high voltage source is recorded for different voltages with interval 100V. Note that, when the voltage is less than 600V, the current is a linear function of the voltage with slope being $0.48A/kV$. With increasing voltage, the temperature of the power MOSFET chip increases, thus the current consumption in the driver circuit also increases, and the slope of the voltage-current curve changes to $0.6A/kV$.
-% To test the stability, the driver circuit works continuously for 110 minutes. For every 10 minutes, the voltage and current of the high voltage source is recorded, as shown in Fig.~\ref{Fig6}. It is not hard to conclude that the fluctuation of the voltage is less than 10V and the fluctuation of the current is less than 10mA. We thus demonstrate that the driver circuit is able to work stably continuously under long time.
-
 \section{Conclusion}
-In this paper, the push pull configuration circuit is applied to design the high voltage pulse generator which is suitable for capacitive load. The high voltage pulse generator is designed and tested successfully which met all the required specifications. The high voltage square pulses have both fast rise and fall times with the repetition rate being 1MHz in continuous mode.
+In this paper, the push pull configuration circuit is applied to the design of a high voltage pulse generator which is suitable for capacitive load. The high voltage pulse generator was fabricated and tested successfully and met all the required specifications. The high voltage square pulses have both fast rise and fall times with the repetition rate being 1 MHz in continuous mode. The structure of the generator can be easily updated to meet higher voltage requirement by stacking power MOSFETs\cite{baker1992stacking,baker1993series}.
 
 % If in two-column mode, this environment will change to single-column format so that long equations can be displayed.
 % Use only when necessary.
